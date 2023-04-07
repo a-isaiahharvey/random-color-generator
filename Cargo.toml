@@ -1,0 +1,5 @@
+[workspace]
+members = ["lib", "web"]
+
+[profile.release]
+lto = true
