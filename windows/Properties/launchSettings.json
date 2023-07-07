@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RandomColorGenerator (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "RandomColorGenerator (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
