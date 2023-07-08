@@ -1,15 +1,33 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-  <script type="module">import init from '/random-color-generator/random-color-generator-web-bd9d5e480ac8cc46.js';init('/random-color-generator/random-color-generator-web-bd9d5e480ac8cc46_bg.wasm');</script>
+  <script type="module">import init from '/random-color-generator/random-color-generator-web-4624244c93545cfe.js';init('/random-color-generator/random-color-generator-web-4624244c93545cfe_bg.wasm');</script>
   <link rel="stylesheet" href="/random-color-generator/main-ca1ad5debe271b14.css">
   
+  
+  
+  
+  <link rel="manifest" href="app.webmanifest">
+  <link rel="icon" type="image/png" href="public/images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
   <title>Random Color Generator</title>
+  <script>
+    // register ServiceWorker
+    window.onload = () => {
+      'use strict';
 
-<link rel="preload" href="/random-color-generator/random-color-generator-web-bd9d5e480ac8cc46_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/random-color-generator/random-color-generator-web-bd9d5e480ac8cc46.js"></head>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('./service_worker.js');
+      }
+    }
+  </script>
+
+<link rel="preload" href="/random-color-generator/random-color-generator-web-4624244c93545cfe_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/random-color-generator/random-color-generator-web-4624244c93545cfe.js"></head>
 
 <body class="bg-white dark:bg-slate-800">
   <!-- Start Single Page Apps for GitHub Pages -->

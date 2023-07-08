@@ -205,7 +205,7 @@ function makeMutClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_28(arg0, arg1, arg2) {
-    wasm.wasm_bindgen__convert__closures__invoke1_mut__h0d6d422c3618b4ea(arg0, arg1, addHeapObject(arg2));
+    wasm.wasm_bindgen__convert__closures__invoke1_mut__h7c3babf29d514c6b(arg0, arg1, addHeapObject(arg2));
 }
 
 function handleError(f, args) {
@@ -366,6 +366,11 @@ function __wbg_get_imports() {
         const ret = getObject(arg0).createComment(v0);
         return addHeapObject(ret);
     };
+    imports.wbg.__wbg_getElementById_cc0e0d931b0d9a28 = function(arg0, arg1, arg2) {
+        var v0 = getCachedStringFromWasm0(arg1, arg2);
+        const ret = getObject(arg0).getElementById(v0);
+        return isLikeNone(ret) ? 0 : addHeapObject(ret);
+    };
     imports.wbg.__wbg_body_674aec4c1c0910cd = function(arg0) {
         const ret = getObject(arg0).body;
         return isLikeNone(ret) ? 0 : addHeapObject(ret);
@@ -384,11 +389,6 @@ function __wbg_get_imports() {
         var len1 = WASM_VECTOR_LEN;
         getInt32Memory0()[arg0 / 4 + 1] = len1;
         getInt32Memory0()[arg0 / 4 + 0] = ptr1;
-    };
-    imports.wbg.__wbg_getElementById_cc0e0d931b0d9a28 = function(arg0, arg1, arg2) {
-        var v0 = getCachedStringFromWasm0(arg1, arg2);
-        const ret = getObject(arg0).getElementById(v0);
-        return isLikeNone(ret) ? 0 : addHeapObject(ret);
     };
     imports.wbg.__wbg_cloneNode_1f7cce4ea8b708e2 = function() { return handleError(function (arg0) {
         const ret = getObject(arg0).cloneNode();
@@ -591,7 +591,7 @@ function __wbg_get_imports() {
     imports.wbg.__wbindgen_throw = function(arg0, arg1) {
         throw new Error(getStringFromWasm0(arg0, arg1));
     };
-    imports.wbg.__wbindgen_closure_wrapper766 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper759 = function(arg0, arg1, arg2) {
         const ret = makeMutClosure(arg0, arg1, 36, __wbg_adapter_28);
         return addHeapObject(ret);
     };
@@ -637,7 +637,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('random-color-generator-web-bd9d5e480ac8cc46_bg.wasm', import.meta.url);
+        input = new URL('random-color-generator-web-4624244c93545cfe_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
