@@ -20,10 +20,8 @@ pub struct Rgb {
 
 impl Display for Color {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            Color::Hex(value) => write!(f, "#{value}"),
-            Color::Rgb { red, green, blue } => write!(f, "({red},{green},{blue})"),
-        }
+        let Color { red, green, blue } = self;
+        write!(f, "({red},{green},{blue})")
     }
 }
 
@@ -38,14 +36,11 @@ pub unsafe extern "C" fn Java_com_aisaiahharvey_randomcolorgenerator_MainActivit
     _: JObject,
 ) -> *mut Rgb {
     let mut rng = thread_rng();
-    let result = if let Color::Rgb { red, green, blue } = Color::random_rgb(&mut rng) {
-        Rgb {
-            red: red as i32,
-            green: green as i32,
-            blue: blue as i32,
-        }
-    } else {
-        Rgb::default()
+    let Color { red, green, blue } = Color::random_rgb(&mut rng);
+    let result = Rgb {
+        red: red as i32,
+        green: green as i32,
+        blue: blue as i32,
     };
 
     Box::into_raw(Box::new(result))

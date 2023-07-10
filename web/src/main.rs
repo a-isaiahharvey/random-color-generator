@@ -47,6 +47,7 @@ fn RandomColorGenerator(cx: Scope) -> impl IntoView {
 }
 
 fn main() {
+    #[cfg(target_arch = "wasm32-unknown-unknown")]
     mount_to_body(|cx| {
         view! { cx,
             <RandomColorGenerator/>

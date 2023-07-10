@@ -19,10 +19,8 @@ pub struct Rgb {
 
 impl Display for Color {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            Color::Hex(value) => write!(f, "#{value}"),
-            Color::Rgb { red, green, blue } => write!(f, "({red},{green},{blue})"),
-        }
+        let Color { red, green, blue } = self;
+        write!(f, "({red},{green},{blue})")
     }
 }
 
@@ -30,14 +28,11 @@ impl Display for Color {
 #[no_mangle]
 pub extern "C" fn randomRgb() -> Rgb {
     let mut rng = thread_rng();
-    if let Color::Rgb { red, green, blue } = Color::random_rgb(&mut rng) {
-        Rgb {
-            red: red as f64 / 255.,
-            green: green as f64 / 255.,
-            blue: blue as f64 / 255.,
-        }
-    } else {
-        Rgb::default()
+    let Color { red, green, blue } = Color::random(&mut rng);
+    Rgb {
+        red: red as f64 / 255.,
+        green: green as f64 / 255.,
+        blue: blue as f64 / 255.,
     }
 }
 
