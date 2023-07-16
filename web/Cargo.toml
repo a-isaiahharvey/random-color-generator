@@ -11,19 +11,19 @@ readme = "README.md"
 random-color-generator = { path = "../lib" }
 
 # Web Frontend Framwork
-leptos = { version = "0.3.0" }
-leptos_meta = { version = "0.3.0", features = ["csr"] }
+leptos = { version = "0.4.3" }
+leptos_meta = { version = "0.4.3", features = ["csr"] }
 
 # Serialization Library
-serde = { version = "1.0.163", features = ["derive"] }
+serde = { version = "1.0.171", features = ["derive"] }
 
 # Random Generator
 rand = "0.8.5"
-getrandom = { version = "0.2.9", features = ["js"] }
+getrandom = { version = "0.2.10", features = ["js"] }
 
 # Web APIs 
 [dependencies.web-sys]
-version = "0.3.63"
+version = "0.3.64"
 features = [
     "CssStyleDeclaration",
     "Clipboard",
