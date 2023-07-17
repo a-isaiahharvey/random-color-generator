@@ -842,8 +842,29 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-x-1\/4 {
+  left: 25%;
+  right: 25%;
+}
+
+.bottom-1\/4 {
+  bottom: 25%;
+}
+
 .flex {
   display: flex;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .justify-center {
