@@ -16,13 +16,13 @@ fn RandomColorGenerator(cx: Scope) -> impl IntoView {
         .unwrap();
 
     view! { cx,
-        <div class="container">
+        <div class="container h-screen relative">
             <h2>{
                 move|| view!{cx,
                     <span class="color">{color.get().to_string()}</span>
                 }
             }</h2>
-            <div class="flex justify-center space-x-4">
+            <div class="flex justify-center space-x-4 absolute inset-x-1/4 bottom-1/4">
                 <button class="btn btn-hero" on:click=move |_: MouseEvent| {
                     set_color.set(rand::random::<Color>());
                     document()
